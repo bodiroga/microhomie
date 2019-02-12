@@ -4,6 +4,7 @@ import settings
 import ubinascii
 import utime
 
+
 PYCOM = ("FiPy", "WiPy", "LoPy", "SiPy", "GPy")
 
 wlan = None

@@ -1,11 +1,11 @@
-from gc import mem_free
+from gc import mem_free  # type: ignore
 from sys import platform
-from utime import time
-from uasyncio import get_event_loop, sleep_ms
-from micropython import const
 
-from mqtt_as import MQTTClient
 from homie import __version__, utils
+from micropython import const
+from mqtt_as import MQTTClient
+from uasyncio import get_event_loop, sleep_ms
+from utime import time
 
 
 QOS = const(1)

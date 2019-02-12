@@ -1,6 +1,7 @@
 from copy import copy
-from utime import time
+
 from uasyncio import sleep_ms
+from utime import time
 
 
 class HomieNodeProperty:
@@ -84,7 +85,9 @@ class HomieNode:
 
             if p.range:
                 for i in range(p.range):
-                    self._subscribe.append(b"{}/{}/{}/set".format(self.id, p.id, i))
+                    self._subscribe.append(
+                        b"{}/{}/{}/set".format(self.id, p.id, i)
+                    )
 
     def has_update(self):
         """Depending on the interval:
@@ -166,7 +169,6 @@ class HomieNode:
 
     def broadcast_callback(self, topic, payload, retained):
         """Gets called when the broadcast topic receives a message"""
-        pass
 
     def get_property_id_from_set_topic(self, topic):
         """Return the property id from topic as integer"""
